@@ -4,10 +4,10 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-DATABASE_URL = os.getenv("DATABASE_URL")
+DATABASE_URL=postgresql://data-encrypt%2Fdecrypt_owner:npg_6gIzkbd2EuQS@ep-floral-rice-a5bnbr8z-pooler.us-east-2.aws.neon.tech/data-encrypt%2Fdecrypt?sslmode=require = os.getenv("DATABASE_URL=postgresql://data-encrypt%2Fdecrypt_owner:npg_6gIzkbd2EuQS@ep-floral-rice-a5bnbr8z-pooler.us-east-2.aws.neon.tech/data-encrypt%2Fdecrypt?sslmode=require")
 
 def get_connection():
-    return psycopg2.connect(DATABASE_URL, sslmode="require")
+    return psycopg2.connect(DATABASE_URL=postgresql://data-encrypt%2Fdecrypt_owner:npg_6gIzkbd2EuQS@ep-floral-rice-a5bnbr8z-pooler.us-east-2.aws.neon.tech/data-encrypt%2Fdecrypt?sslmode=require, sslmode="require")
 
 # Create tables if they don't exist
 def init_db():
