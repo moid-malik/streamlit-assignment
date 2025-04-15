@@ -9,7 +9,10 @@ DATABASE_URL = "postgresql://data-encrypt%2Fdecrypt_owner:npg_6gIzkbd2EuQS@ep-fl
 def get_connection():
     return psycopg2.connect(DATABASE_URL, sslmode="require")
 
-# Create tables if they
+def init_db():
+    with get_connection() as conn:
+        with conn.cursor() as cur:
+            # Create users table
             cur.execute("""
                 CREATE TABLE IF NOT EXISTS users (
                     id SERIAL PRIMARY KEY,
@@ -17,6 +20,8 @@ def get_connection():
                     password TEXT NOT NULL
                 );
             """)
+            
+            # Create data table
             cur.execute("""
                 CREATE TABLE IF NOT EXISTS data (
                     id SERIAL PRIMARY KEY,
